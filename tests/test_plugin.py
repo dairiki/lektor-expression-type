@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from unittest.mock import (
-    call,
-    Mock,
-    )
+try:
+    from unittest import mock
+except ImportError:             # pragma: no cover
+    import mock
 
 import pytest
 
@@ -21,17 +21,17 @@ from lektor_expression_type import (
 class TestExpressionDescriptor(object):
     @pytest.fixture
     def expr(self):
-        return Mock(name='expression', spec=['evaluate'])
+        return mock.Mock(name='expression', spec=['evaluate'])
 
     @pytest.fixture
     def descriptor(self, lektor_pad, expr):
         return ExpressionDescriptor(lektor_pad, expr)
 
     def test_get_attr(self, descriptor, lektor_pad, expr):
-        obj = Mock(name='obj')
+        obj = mock.Mock(name='obj')
         assert descriptor.__get__(obj) is expr.evaluate.return_value
         assert expr.mock_calls == [
-            call.evaluate(lektor_pad, this=obj, alt=obj.alt),
+            mock.call.evaluate(lektor_pad, this=obj, alt=obj.alt),
             ]
 
     def test_get_class_attr(self, descriptor):

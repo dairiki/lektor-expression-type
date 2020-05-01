@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-
-from pathlib import Path
+import os
 
 import pytest
 
@@ -10,13 +9,9 @@ from lektor.project import Project
 
 
 @pytest.fixture(scope="session")
-def site_path():
-    return Path(__file__).parent / 'test-site'
-
-
-@pytest.fixture(scope="session")
-def lektor_env(site_path):
-    return Project.from_path(str(site_path)).make_env(load_plugins=False)
+def lektor_env():
+    site_path = os.path.join(os.path.dirname(__file__), 'test-site')
+    return Project.from_path(site_path).make_env(load_plugins=False)
 
 
 @pytest.fixture
