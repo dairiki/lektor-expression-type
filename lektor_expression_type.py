@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-
+"""Add jinja-evaluated types to lektor.
+"""
 import jinja2
 from lektor.environment import (
     Expression,
