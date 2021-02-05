@@ -1,6 +1,10 @@
 ## Changelog
 
-### [Unreleased]
+### 0.1 — 2021-02-05
+
+No code changes.
+
+Update development status classifier to "stable".
 
 #### Fixes
 
