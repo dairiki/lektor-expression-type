@@ -1,6 +1,12 @@
 ## Changelog
 
-### 0.1 — 2021-02-05
+### Next Release
+
+#### Testing
+
+- Test under python 3.10 and lektor<3.3
+
+### Release 0.1 — 2021-02-05
 
 No code changes.
 
