@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Add jinja-evaluated types to lektor.
 """
 import jinja2
@@ -10,7 +9,7 @@ from lektor.pluginsystem import Plugin
 from lektor.types import Type
 
 
-class ExpressionDescriptor(object):
+class ExpressionDescriptor:
     def __init__(self, pad, expr):
         self.pad = pad
         self.expr = expr
@@ -32,7 +31,7 @@ class ExpressionTypeBase(Type):
         try:
             expr = self.expression_class(pad.env, raw.value)
         except jinja2.TemplateSyntaxError as exc:
-            return raw.bad_value('jinja syntax error: {!s}'.format(exc))
+            return raw.bad_value(f'jinja syntax error: {exc!s}')
         return ExpressionDescriptor(pad, expr)
 
 
@@ -47,7 +46,7 @@ class FormatExpressionType(ExpressionTypeBase):
 
 class ExpressionTypePlugin(Plugin):
     name = 'Expression Type'
-    description = u'Add jinja-evaluated types.'
+    description = 'Add jinja-evaluated types.'
 
     def on_setup_env(self, **extra):
         self.env.add_type(ExpressionType)

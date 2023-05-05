@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 try:
     from unittest import mock
 except ImportError:             # pragma: no cover
-    import mock
+    from unittest import mock
 
 import pytest
 
@@ -18,7 +17,7 @@ from lektor_expression_type import (
     )
 
 
-class TestExpressionDescriptor(object):
+class TestExpressionDescriptor:
     @pytest.fixture
     def expr(self):
         return mock.Mock(name='expression', spec=['evaluate'])
@@ -38,7 +37,7 @@ class TestExpressionDescriptor(object):
         assert descriptor.__get__(None, object) is descriptor
 
 
-class ExpressionTypeTestBase(object):
+class ExpressionTypeTestBase:
     @pytest.fixture
     def expression(self):
         return self.test_expression
@@ -99,7 +98,7 @@ class TestFormatExpressionType(ExpressionTypeTestBase):
     expected_value = "Number of subpages: 2"
 
 
-class TestExpressionTypePlugin(object):
+class TestExpressionTypePlugin:
     @pytest.fixture
     def plugin(self, lektor_env):
         return ExpressionTypePlugin(lektor_env, 'expression-type')
