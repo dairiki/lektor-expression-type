@@ -4,6 +4,7 @@
 [![PyPI Supported Python Versions](https://img.shields.io/pypi/pyversions/lektor-expression-type.svg)](https://pypi.python.org/pypi/lektor-expression-type/)
 [![GitHub license](https://img.shields.io/github/license/dairiki/lektor-expression-type)](https://github.com/dairiki/lektor-expression-type/blob/master/LICENSE)
 [![GitHub Actions (Tests)](https://github.com/dairiki/lektor-expression-type/workflows/Tests/badge.svg)](https://github.com/dairiki/lektor-expression-type)
+[![Trackgit Views](https://us-central1-trackgit-analytics.cloudfunctions.net/token/ping/lhavrv6w2b1juzgmxctl)](https://trackgit.com)
 
 Add jinja-evaluated types, `expression` and `format_expression`, to
 [Lektor][].
